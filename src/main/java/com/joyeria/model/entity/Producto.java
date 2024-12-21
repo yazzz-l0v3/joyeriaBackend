@@ -30,6 +30,8 @@ public class Producto {
 	@Column(name="imagen")
     private String imagenUrl;
 	
+	private Integer estado;
+	
 	@ManyToOne
 	@JoinColumn(name = "id_marca")
 	private Marca marca;

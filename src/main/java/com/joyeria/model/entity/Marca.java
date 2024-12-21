@@ -12,6 +12,7 @@ import lombok.Data;
 @Table(name = "tb_marca")
 @Data
 public class Marca {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_marca")

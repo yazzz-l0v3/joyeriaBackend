@@ -3,6 +3,7 @@ package com.joyeria.model.service.impl;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -67,11 +68,6 @@ public class UsuarioServiceImpl implements IUsuarioService {
 	        nuevoUsuario.setApellidoPaterno(inputDTO.apellidoPaterno());
 	        nuevoUsuario.setApellidoMaterno(inputDTO.apellidoMaterno());
 	        nuevoUsuario.setDni(inputDTO.dni());
-
-	        // Asigna un rol por defecto
-	        Rol rolUsuario = new Rol();
-	        rolUsuario.setNombre("USUARIO");
-	        nuevoUsuario.setRoles(Collections.singleton(rolUsuario));
 
 	        usuarioRepository.save(nuevoUsuario);
 	    }
